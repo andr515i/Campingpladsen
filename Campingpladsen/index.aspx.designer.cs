@@ -60,57 +60,30 @@ namespace Campingpladsen
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataCustomers;
 
         /// <summary>
-        /// age control.
+        /// placeID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox age;
+        protected global::System.Web.UI.WebControls.DropDownList placeID;
 
         /// <summary>
-        /// firstName control.
+        /// customerID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox firstName;
+        protected global::System.Web.UI.WebControls.DropDownList customerID;
 
         /// <summary>
-        /// lastName control.
+        /// BookSpot control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox lastName;
-
-        /// <summary>
-        /// phoneNumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox phoneNumber;
-
-        /// <summary>
-        /// email  control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox email;
-
-        /// <summary>
-        /// submit_button control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button submit_button;
+        protected global::System.Web.UI.WebControls.Button BookSpot;
     }
 }
