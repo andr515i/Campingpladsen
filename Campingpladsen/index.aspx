@@ -40,7 +40,9 @@
                 </td>
             </tr>
         </table>
-        <form action="/" method="post">
+        <div id="t">
+
+       <%-- <form action="/" name="BookPlace" method="post">
             <div>
                 <asp:DropDownList runat="server" ID="placeID" DataSourceID="SqlDataPlaces" DataTextField="placeId" DataValueField="placeId">
                 </asp:DropDownList>
@@ -49,9 +51,12 @@
 
             </div>
             <asp:Button Text="submit" type="submit" runat="server" ID="BookSpot" OnClick="BookSpot_Click1" />
-        </form>
+        </form>--%>
+        </div>
 
-       <%-- <form action="/" method="post">
+        <div id="e">
+
+        <form action="/nc.aspx" name="newCustomer" method="post">
             <asp:Label Text="book a spot" runat="server" />
             <div>
 
@@ -62,7 +67,8 @@
                 <asp:TextBox runat="server" required="required" type="text" ID="email" name="email" value="" placeholder="email. eg: test@test.com" />
             </div>
             <asp:Button type="submit" Text="submit" runat="server" ID="submit_button" OnClick="submit_button_Click1" />
-        </form>--%>
+        </form>           
+        </div>                    
 
 
 
