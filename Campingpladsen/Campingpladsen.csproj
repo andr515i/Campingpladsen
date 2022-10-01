@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CreateCustomer.js" />
+    <Content Include="redirect.aspx" />
     <Content Include="style.css" />
     <Content Include="Web.config" />
     <Content Include="index.aspx" />
@@ -98,6 +99,13 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="redirect.aspx.cs">
+      <DependentUpon>redirect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="redirect.aspx.designer.cs">
+      <DependentUpon>redirect.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

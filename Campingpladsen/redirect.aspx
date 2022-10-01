@@ -1,15 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="Campingpladsen.WebForm" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="redirect.aspx.cs" Inherits="Campingpladsen.redirect" %>
 
 <!DOCTYPE html>
 
-<form id="form1" runat="server">
-    <html xmlns="http://www.w3.org/1999/xhtml">
-
-    <head runat="server">
-        <title>campingpladsen</title>
-        <link href="style.css" rel="stylesheet" />
-    </head>
-    <body>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
         <table>
             <tr>
                 <td>
@@ -36,34 +34,23 @@
                             <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
                         </Columns>
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataCustomers" runat="server" ConnectionString="<%$ ConnectionStrings:campingpladsenConnectionString %>" SelectCommand="SELECT * FROM [Customers] ORDER BY [customerID]" OnSelecting="SqlDataCustomers_Selecting"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataCustomers" runat="server" ConnectionString="<%$ ConnectionStrings:campingpladsenConnectionString %>" SelectCommand="SELECT * FROM [Customers] ORDER BY [customerID]"></asp:SqlDataSource>
                 </td>
             </tr>
         </table>
+        <div>
+            <h3>book a spot</h3>
+            <form action="/" name="BookPlace" method="post">
+                <div>
+                    <asp:DropDownList runat="server" ID="placeID" DataSourceID="SqlDataPlaces" DataTextField="placeId" DataValueField="placeId">
+                    </asp:DropDownList>
+                    <asp:DropDownList runat="server" ID="customerID" DataSourceID="SqlDataCustomers" DataTextField="firstName" DataValueField="customerID">
+                    </asp:DropDownList>
 
-        <form action="/" name="newCustomer" method="post">
-            <asp:Label Text="book a spot" runat="server" />
-            <div> 
-
-                <asp:TextBox runat="server" required="required" type="text" ID="age" name="age" value="" placeholder="age?" />
-                <asp:TextBox runat="server" required="required" type="text" ID="firstName" name="firstName" value="" placeholder="first name" />
-                <asp:TextBox runat="server" required="required" type="text" ID="lastName" name="lastName" value="" placeholder="last name" />
-                <asp:TextBox runat="server" required="required" type="text" ID="phoneNumber" name="phoneNumber" value="" placeholder="phone number. eg: 12345678" />
-                <asp:TextBox runat="server" required="required" type="text" ID="email" name="email" value="" placeholder="email. eg: test@test.com" />
-            </div>
-            <asp:Button type="submit" Text="submit" runat="server" ID="submit_button" OnClick="submit_button_Click1" /> 
-        </form>           
-
-
-        <form action="redirect.aspx" name="BookPlace" method="post">
-            <div>
-                <h4>click here to be taken to another page where you can book a spot</h4>
-            <asp:Button Text="book a spot here!" type="submit" runat="server" ID="BookSpot"  />
-            </div>
-        </form>
-
-
-
-    </body>
-    </html>
-</form>
+                    <asp:Button Text="submit" type="submit" runat="server" ID="BookSpot" OnClick="BookSpot_Click1" />
+                </div>
+            </form>
+        </div>
+    </form>
+</body>
+</html>
