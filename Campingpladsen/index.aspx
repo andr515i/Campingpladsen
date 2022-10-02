@@ -13,7 +13,7 @@
         <table>
             <tr>
                 <td>
-
+                    <%-- this sis a gridview of the places table in the database. it shots placeid, isreserved and customerid (only if its reserved, else its null) --%>
                     <asp:GridView ID="gridview" runat="server" AutoGenerateColumns="False" DataKeyNames="placeId" DataSourceID="SqlDataPlaces">
                         <Columns>
                             <asp:BoundField DataField="placeId" HeaderText="placeId" InsertVisible="False" ReadOnly="True" SortExpression="placeId" />
@@ -25,7 +25,7 @@
                 </td>
                 <td>
 
-
+                    <%-- this gridview shows the customers, which is just all the coloumns spewed out. could have put firstname and lastname together --%>
                     <asp:GridView ID="grid" runat="server" AutoGenerateColumns="False" DataKeyNames="customerID" DataSourceID="SqlDataCustomers">
                         <Columns>
                             <asp:BoundField DataField="CustomerID" HeaderText="customer number" />
@@ -40,7 +40,7 @@
                 </td>
             </tr>
         </table>
-
+        <%-- this form is used to make a new customer. currently, theres nothing stopping us from making illegal customers... todo asap --%>
         <form action="/" name="newCustomer" method="post">
             <asp:Label Text="book a spot" runat="server" />
             <div> 
@@ -54,7 +54,7 @@
             <asp:Button type="submit" Text="submit" runat="server" ID="submit_button" OnClick="submit_button_Click1" /> 
         </form>           
 
-
+        <%-- this redirects us to another page where we can book a place. so far can only book or change booking, cant unbook, which is a todo later. --%>
         <form action="redirect.aspx" name="BookPlace" method="post">
             <div>
                 <h4>click here to be taken to another page where you can book a spot</h4>

@@ -18,6 +18,7 @@ namespace Campingpladsen
 
         protected void BookSpot_Click1(object sender, EventArgs e)
         {
+            //we try catch the whole thing incase of errors, and throw them out. right now theres not supposed to be any protection or safety at all
             try
             {
                 //sql connection
@@ -36,14 +37,14 @@ namespace Campingpladsen
                 //check if place is already booked
                 bool placeBooked = false;
                 string val = placeID.SelectedValue.ToString();
-                foreach (GridViewRow rows in gridview.Rows)
+                foreach (GridViewRow rows in gridview.Rows)  // foreach row in gridview
                 {
                     string cellText = rows.Cells[0].Text;
-                    if (val == cellText)
+                    if (val == cellText)  //check if selected placeid is equal to the placeid coloumn cell's placeid
                     {
-                        if (rows.Cells[1].Text == customerID.SelectedValue)
+                        if (rows.Cells[1].Text == customerID.SelectedValue) // also check if its also the same customer
                         {
-                            placeBooked = true;
+                            placeBooked = true;  // we dont use this currently, but in future it will be used to ask for a rebook and then initiate a rebooking schema
                         }
                     }
                 }
@@ -65,7 +66,7 @@ namespace Campingpladsen
                 //close the connection to the data
                 con.Close();
             }
-            catch (Exception ex)
+            catch (Exception ex)// catch any exceptions and write them out
             {
                 Response.Write("error creating customer - " + ex.ToString());
             }

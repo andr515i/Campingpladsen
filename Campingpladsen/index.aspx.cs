@@ -14,8 +14,9 @@ namespace Campingpladsen
     public partial class WebForm : System.Web.UI.Page
     {
 
-        protected void submit_button_Click1(object sender, EventArgs e)
+        protected void submit_button_Click1(object sender, EventArgs e) // on submit button for customer creation click
         {
+            //we try catch the whole thing incase of errors, and throw them out. right now theres not supposed to be any protection or safety at all
             try
             {
                 //sql connection
@@ -45,7 +46,7 @@ namespace Campingpladsen
                 //close the connection to the database
                 con.Close();
             }
-            catch (Exception ex)
+            catch (Exception ex) // catch any exceptions and write them out
             {
                 Response.Write("error creating customer - " + ex.ToString());
             }
@@ -57,10 +58,10 @@ namespace Campingpladsen
         }
        
 
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e) // on page load
         {
             
-            // load jquery on page load so we can use website without crashing it (isn't needed anymore, however might put some validation check in so I'll keep it for now)
+            // load jquery on page load so we can use website without crashing it (isn't needed anymore, however should put some validation check in so I'll keep it for now)
             ScriptManager.ScriptResourceMapping.AddDefinition("jquery",
             new ScriptResourceDefinition
             {

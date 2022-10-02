@@ -11,7 +11,7 @@
         <table>
             <tr>
                 <td>
-
+                    <%--  same gridviews as earlier, this displays places --%>
                     <asp:GridView ID="gridview" runat="server" AutoGenerateColumns="False" DataKeyNames="placeId" DataSourceID="SqlDataPlaces">
                         <Columns>
                             <asp:BoundField DataField="placeId" HeaderText="placeId" InsertVisible="False" ReadOnly="True" SortExpression="placeId" />
@@ -23,7 +23,7 @@
                 </td>
                 <td>
 
-
+                    <%--  and this displays customers --%>
                     <asp:GridView ID="grid" runat="server" AutoGenerateColumns="False" DataKeyNames="customerID" DataSourceID="SqlDataCustomers">
                         <Columns>
                             <asp:BoundField DataField="CustomerID" HeaderText="customer number" />
@@ -39,6 +39,7 @@
             </tr>
         </table>
         <div>
+            <%-- form to book a spot, using the onclick bookspot_click1 event --%>
             <h3>book a spot</h3>
             <form action="/" name="BookPlace" method="post">
                 <div>
